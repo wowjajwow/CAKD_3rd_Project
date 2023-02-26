@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- Child template content goes here -->
+<div align = center>
+        <form action = "/file_upload/{{client_ip}}" method = "POST" enctype = "multipart/form-data">
+          <input type = "file" name = "file"/>
+          <input type = "submit" />
+        </form>
+
+
+          {% if string %}
+                {{string}}
+          {%endif%}
+      </div>
+<div>
+    파일 형식 :
+    [<br>
+	{<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		"DOCID": 2123,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		"title": "제목",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		"subtitle": "소제목",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		"content": "내용",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		"board": "게시판 이름",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		"writer": "(이름)",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		"write_date": "게시글 날짜",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		"url": "게시글 url 주소",<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;		"source_site": "사이트 이름"<br>
+	}<br>
+]<br>
+
+
+
+</div>
+{% endblock %}

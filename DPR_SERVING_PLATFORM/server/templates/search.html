@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<br>
+    <!-- Child template content goes here -->
+<form action="\search\{{client_ip}}" method="post" class="input-form">
+    <p>query : </p>
+    <textarea type="text" name='query' class="input-text"> </textarea>
+    <p>input n : </p>
+    <textarea type="number" name='number' class="input-number"> </textarea>
+    <input type="submit" value="submit" class="input-btn">
+</form>
+{% for i in result %}
+    <p> 문장 : {{i['title']}}</p>
+    <p> 문장 : {{i['content']}}</p>
+    <p> 유사도 : {{i['score']}}</p>
+    {% if 'board' in i %}
+        <p> board : {{i['board']}}</p>
+    {% endif %}
+    {% if 'price' in i %}
+        <p> price : {{i['price']}}</p>
+    {% endif %}
+{% endfor %}
+

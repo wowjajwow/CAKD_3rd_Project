@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+    <!-- Child template content goes here -->
+<br>
+<form action="\similarity\{{client_ip}}" method="post" class="input-form">
+    <p>문장 1 : </p>
+    <textarea type="text" name='text1' class="input-text"></textarea>
+    <p>문장 2 : </p>
+    <textarea type="text" name='text2' class="input-text"></textarea>
+    <input type="submit" value="submit" class="input-btn">
+</form>
+    {% if res %}
+        {% for i in res%}
+            <p>두 문장 {{i[0]}}와(과) {{i[1]}}</p>
+                    {% for j in i[2]%}
+                        <p>유사도는 {{j}} 입니다.</p>
+                    {% endfor%}
+        {% endfor%}
+    {% endif %}
+
+{% endblock %}
